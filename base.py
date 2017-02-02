@@ -4,21 +4,13 @@ import os
 import gitlab
 from github import Github
 
-# Github creds
 gh_token = os.environ.get('GITHUB_ACCESS_TOKEN') \
     or raw_input('Your Github email/username:  ')
-# Gitlab creds
 gl_token = os.environ.get('GITLAB_ACCESS_TOKEN') \
     or raw_input('Your GitLab email/username:  ')
 
 gh = Github(gh_token)
 gl = gitlab.Gitlab('https://gitlab.com', gl_token)
-
-
-# list all the projects
-# projects = gl.projects.list()
-# for project in projects:
-#     print(project)
 
 # Check auth
 gh_user = gh.get_user()
@@ -32,7 +24,6 @@ def wizard():
     )
 
     gl_project = gl.projects.get(gl_repo_name)
-    # Open issues
     gl_project_issues = gl_project.issues.list()
 
     if not gl_project_issues:
@@ -51,7 +42,8 @@ def wizard():
             body=issue.description
         )
 
-    print("Issues in Github Repo(" + gh_repo.name + "): \n\n")
+    print("Issues in Github Repo(" + gh_repo.name + "): \n")
+
     for issue in gh_repo.get_issues():
         print(issue.title)
 
