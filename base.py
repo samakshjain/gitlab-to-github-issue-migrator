@@ -44,7 +44,7 @@ def wizard():
 
     print("Issues in Github Repo(" + gh_repo.name + "): \n")
 
-    for issue in gh_repo.get_issues():
+    for issue in reversed(gh_repo.get_issues()):
         print(issue.title)
 
     while True:
