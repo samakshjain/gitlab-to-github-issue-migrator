@@ -2,7 +2,7 @@
 
 ===
 
-Usage
+## Usage
 
 1. Get access token for [Github](https://help.github.com/articles/creating-an-access-token-for-command-line-use/), and set the environment variable `GITHUB_ACCESS_TOKEN` to its value.
 2. For Gitlab, go to Settings > Access Tokens, create one and grant is API access and set `GITLAB_ACCESS_TOKEN`.
@@ -12,5 +12,5 @@ Usage
 
 ===
 
-#### Be wise, issues will be duplicated if the script is run again.
-#### Repo names can be suffixed with the organization name as such `<generic_startup_name>/<marginally-witty-repo-name>`.
+Be wise, issues will be duplicated if you run the script again.
+Repo names can be suffixed with the organization name as such `<generic_startup_name>/<marginally-witty-repo-name>`.
