@@ -5,9 +5,9 @@ import gitlab
 from github import Github
 
 gh_token = os.environ.get('GITHUB_ACCESS_TOKEN') \
-    or raw_input('Your Github email/username:  ')
+    or raw_input('Your Github token:  ')
 gl_token = os.environ.get('GITLAB_ACCESS_TOKEN') \
-    or raw_input('Your GitLab email/username:  ')
+    or raw_input('Your GitLab token:  ')
 
 gh = Github(gh_token)
 gl = gitlab.Gitlab('https://gitlab.com', gl_token)
